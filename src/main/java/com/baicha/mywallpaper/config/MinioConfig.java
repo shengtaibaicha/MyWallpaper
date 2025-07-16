@@ -1,0 +1,28 @@
+package com.baicha.mywallpaper.config;
+
+import io.minio.MinioClient;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MinioConfig {
+
+//    @Value("${access-key}")
+    @Value(value = "${minio.access-key}")
+    private String accessKey;
+
+    @Value(value = "${minio.secret-key}")
+    private String secretKey;
+
+    @Value(value = "${minio.url}")
+    private String url;
+
+    @Bean
+    public MinioClient minioClient() {
+        return MinioClient.builder()
+                .endpoint(url)
+                .credentials(accessKey, secretKey)
+                .build();
+    }
+}

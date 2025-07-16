@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baicha.mywallpaper.mapper.UsersMapper">
+
+    <resultMap id="BaseResultMap" type="com.baicha.mywallpaper.entity.Users">
+            <id property="id" column="id" />
+            <result property="userName" column="user_name" />
+            <result property="userEmail" column="user_email" />
+            <result property="userAvatar" column="user_avatar" />
+            <result property="userPassword" column="user_password" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_name,user_email,user_avatar,user_password
+    </sql>
+</mapper>
