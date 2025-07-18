@@ -40,7 +40,7 @@ public class JwtTool {
                 .compact(); // 生成最终的JWT字符串
     }
 
-    public String validateToken(String token) {
+    public Object validateToken(String token) {
         try {
             // 解析并验证 JWT
             Jws<Claims> jws = Jwts.parser()
@@ -49,12 +49,8 @@ public class JwtTool {
                     .parseClaimsJws(token); // 解析 JWT 字符串
             // 解析token后将userId返回
             return jws.getBody().get("userId", String.class);
-        } catch (ExpiredJwtException e) {
-            return "Token has expired.";
-        } catch (SignatureException e) {
-            return "Invalid signature.";
         } catch (Exception e) {
-            return "Invalid token: " + e.getMessage();
+            return false;
         }
     }
 }

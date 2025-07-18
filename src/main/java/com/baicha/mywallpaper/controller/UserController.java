@@ -1,10 +1,9 @@
 package com.baicha.mywallpaper.controller;
 
-import com.baicha.mywallpaper.entity.Users;
 import com.baicha.mywallpaper.model.Respons;
 import com.baicha.mywallpaper.service.UsersService;
 import com.baicha.mywallpaper.tool.RequestContextHolder;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +19,8 @@ public class UserController {
                             @RequestParam(value = "userPassword") String password,
                             @RequestParam(value = "userEmail") String userEmail,
                             @RequestParam(value = "captchaCode")  String captchaCode,
-                            HttpSession session) {
-        Respons result = usersService.register(username, password, userEmail, captchaCode, session);
+                            HttpServletRequest request) {
+        Respons result = usersService.register(username, password, userEmail, captchaCode, request);
         return result;
     }
 
@@ -29,8 +28,8 @@ public class UserController {
     public Respons login(@RequestParam(value = "userName") String username,
                          @RequestParam(value = "userPassword") String password,
                          @RequestParam(value = "captchaCode") String captchaCode,
-                         HttpSession session){
-        Respons result = usersService.login(username, password, captchaCode, session);
+                         HttpServletRequest request){
+        Respons result = usersService.login(username, password, captchaCode, request);
         return result;
     }
 

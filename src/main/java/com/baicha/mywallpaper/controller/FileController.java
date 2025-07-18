@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+
 @Slf4j
 @RestController
 @RequestMapping("/wallpaper/file")
@@ -17,7 +19,7 @@ public class FileController {
     private FilesService filesService;
 
     @PostMapping("/upload")
-    public Respons upload(@RequestParam("file") MultipartFile file) {
+    public Respons upload(@RequestParam("file") MultipartFile file) throws IOException {
         Respons result = filesService.upload(file);
         return result;
     }

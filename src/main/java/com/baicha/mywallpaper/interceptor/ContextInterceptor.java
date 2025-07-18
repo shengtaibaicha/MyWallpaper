@@ -28,10 +28,17 @@ public class ContextInterceptor implements HandlerInterceptor {
                              Object handler) throws IOException {
         // 从请求头获取用户ID
         String token = request.getHeader("token");
-        String userId = jwtTool.validateToken(token);
+        Object userId = jwtTool.validateToken(token);
+        if (userId.equals(false)) {
+            response.setStatus(HttpServletResponse.SC_ACCEPTED);
+            response.setContentType("application/json;charset=utf-8");
+            Respons error = Respons.error("请先登录！");
+            response.getWriter().write(gson.toJson(error));
+            return false;
+        }
         // 如果里面的token为null就拦截请求
         if (token == null || token.isEmpty()) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setStatus(HttpServletResponse.SC_CREATED);
             response.setContentType("application/json;charset=utf-8");
             Respons error = Respons.error("请先登录！");
             response.getWriter().write(gson.toJson(error));

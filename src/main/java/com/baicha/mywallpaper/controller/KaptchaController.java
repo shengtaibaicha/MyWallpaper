@@ -27,18 +27,19 @@ public class KaptchaController {
     private RedisTemplate redisTemplate;
 
     @GetMapping("/get")
-    public Respons getKaptcha(HttpServletResponse response, HttpSession session) throws IOException {
+    public Respons getKaptcha(HttpServletResponse response) throws IOException {
         // 生成验证码文本
         String capText = kaptchaProducer.createText();
         // 将验证码存入redis并设置过期时间
         String redisKey = IdUtil.fastSimpleUUID();
-        redisTemplate.opsForValue().set(redisKey, capText, 3, TimeUnit.MINUTES);
+        redisTemplate.opsForValue().set(redisKey, capText, 5, TimeUnit.MINUTES);
         // 把redis的key唯一表示写入session
-        session.setAttribute("redisKey", redisKey);
+//        session.setAttribute("redisKey", redisKey);
         // 生成图片
         BufferedImage bi = kaptchaProducer.createImage(capText);
         // 设置响应类型为图片
         response.setContentType("image/jpeg");
+        response.setHeader("redisKey", redisKey);
         // 输出图片流
         ImageIO.write(bi, "jpg", response.getOutputStream());
         return Respons.ok();

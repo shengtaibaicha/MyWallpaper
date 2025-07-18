@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
@@ -43,11 +44,9 @@ public class MinioTool {
     /**
      * 上传文件
      */
-    public String uploadFile(MultipartFile file) {
+    public String uploadFile(MultipartFile file, String fileName, String contentType) throws IOException {
         try {
-            String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
             InputStream inputStream = file.getInputStream();
-            String contentType = file.getContentType();
 
             minioClient.putObject(PutObjectArgs.builder()
                     .bucket(bucketName)
@@ -59,6 +58,26 @@ public class MinioTool {
             // 生成永久URL（需确保存储桶公开可读）
             return uri + "/" + bucketName + "/" + fileName;
 
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("上传文件失败");
+        }
+    }
+
+    /**
+     * 上传压缩文件
+     */
+    public String uploadFileSE(ByteArrayInputStream inputStream, String fileName, String contentType, Long size) {
+        try {
+            minioClient.putObject(PutObjectArgs.builder()
+                    .bucket(bucketName)
+                    .object(fileName)
+                    .stream(inputStream, size, -1)
+                    .contentType(contentType)
+                    .build());
+
+            // 生成永久URL（需确保存储桶公开可读）
+            return uri + "/" + bucketName + "/" + fileName;
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("上传文件失败");

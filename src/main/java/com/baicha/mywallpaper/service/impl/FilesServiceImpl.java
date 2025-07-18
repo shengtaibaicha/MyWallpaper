@@ -12,11 +12,16 @@ import com.baicha.mywallpaper.service.FilesService;
 import com.baicha.mywallpaper.mapper.FilesMapper;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -38,18 +43,36 @@ public class FilesServiceImpl extends ServiceImpl<FilesMapper, Files>
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Respons upload(MultipartFile file) {
-        String s = minioTool.uploadFile(file);
+    public Respons upload(MultipartFile file) throws IOException {
+        String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
+        String contentType = file.getContentType();
+        // 保存压缩后的文件
+        // 压缩图片
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        Thumbnails.of(file.getInputStream())
+                .scale(1.0)
+                .outputQuality(0.1)
+                .toOutputStream(outputStream);
+        // 转换为输入流
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
+        long sizeSE = outputStream.size();
+        // 保存到minion
+        String s2 = minioTool.uploadFileSE(inputStream, "SE" + fileName, contentType, sizeSE);
+        // 保存源文件
+        String s = minioTool.uploadFile(file, fileName, contentType);
         String[] s1 = s.split("/");
         // 上传完成之后把数据存入mysql
         try {
             Files f = new Files();
             f.setFileUrl(s);
+            f.setFileUrlse(s2);
             f.setUploadTime(new Date());
             f.setStatus(FileStatus.NOT_REVIEWED);
             f.setUserId(String.valueOf(RequestContextHolder.get("userId")));
             f.setFileName(s1[4]);
             f.setNumber(0);
+            String title = file.getOriginalFilename();
+            f.setFileTitle(title.split("[.]")[0]);
             filesMapper.insert(f);
         } catch (Exception e) {
             log.error("文件上传失败" + e.getMessage());
@@ -104,11 +127,12 @@ public class FilesServiceImpl extends ServiceImpl<FilesMapper, Files>
         // 创建分页对象
         Page<Files> files = new Page<>(page, size);
 
-        Page<Files> filesPage = filesMapper.selectPage(files, null);
-        long total = filesPage.getTotal();
-        long pages = files.getPages();
+        // 查询状态为已审核的图片
+        LambdaQueryWrapper<Files> qw = new LambdaQueryWrapper<>();
+        LambdaQueryWrapper<Files> eq = qw.eq(Files::getStatus, FileStatus.REVIEWED);
 
-        HashMap<String, Object> map = new HashMap<>();
+        Page<Files> filesPage = filesMapper.selectPage(files, eq);
+
         return Respons.ok(filesPage);
     }
 }

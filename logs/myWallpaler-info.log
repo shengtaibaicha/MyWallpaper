@@ -1,255 +1,36 @@
-2025-07-16 09:29:20.209 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.15 with PID 3464 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
-2025-07-16 09:29:20.218 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - No active profile set, falling back to 1 default profile: "default"
-2025-07-16 09:29:21.004 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-16 09:29:21.009 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-16 09:29:21.039 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2025-07-16 09:29:21.648 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
-2025-07-16 09:29:21.659 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
-2025-07-16 09:29:21.660 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-07-16 09:29:21.661 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-16 09:29:21.724 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-07-16 09:29:21.724 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1457 ms
-2025-07-16 09:29:23.049 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@126be319
-2025-07-16 09:29:23.174 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
-2025-07-16 09:29:23.188 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
-2025-07-16 09:29:23.197 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 3.757 seconds (process running for 5.271)
-2025-07-16 09:42:26.755 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-16 09:42:26.755 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-07-16 09:42:26.757 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-07-16 09:42:27.020 [http-nio-8088-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-07-16 09:44:22.296 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-16 09:44:22.470 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-07-16 09:44:26.403 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.15 with PID 26828 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
-2025-07-16 09:44:26.406 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - No active profile set, falling back to 1 default profile: "default"
-2025-07-16 09:44:26.985 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-16 09:44:26.987 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-16 09:44:27.009 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2025-07-16 09:44:27.480 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
-2025-07-16 09:44:27.490 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
-2025-07-16 09:44:27.492 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-07-16 09:44:27.492 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-16 09:44:27.549 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-07-16 09:44:27.550 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1099 ms
-2025-07-16 09:44:28.794 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c4ee95c
-2025-07-16 09:44:28.985 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
-2025-07-16 09:44:29.010 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
-2025-07-16 09:44:29.024 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 3.304 seconds (process running for 4.0)
-2025-07-16 09:44:34.568 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-16 09:44:34.568 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-07-16 09:44:34.570 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-07-16 09:46:25.106 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-16 09:46:25.508 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-07-16 09:46:28.938 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.15 with PID 23640 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
-2025-07-16 09:46:28.942 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - No active profile set, falling back to 1 default profile: "default"
-2025-07-16 09:46:29.521 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-16 09:46:29.522 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-16 09:46:29.543 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-2025-07-16 09:46:30.035 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
-2025-07-16 09:46:30.044 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
-2025-07-16 09:46:30.046 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-07-16 09:46:30.046 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-16 09:46:30.105 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-07-16 09:46:30.106 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1121 ms
-2025-07-16 09:46:31.211 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@282308c3
-2025-07-16 09:46:31.342 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
-2025-07-16 09:46:31.359 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
-2025-07-16 09:46:31.368 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 3.037 seconds (process running for 3.701)
-2025-07-16 09:46:34.622 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-16 09:46:34.622 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-07-16 09:46:34.623 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-07-16 09:47:08.048 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-16 09:47:08.235 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-07-16 09:47:13.737 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.15 with PID 24444 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
-2025-07-16 09:47:13.739 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - No active profile set, falling back to 1 default profile: "default"
-2025-07-16 09:47:14.320 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-16 09:47:14.323 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-16 09:47:14.345 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2025-07-16 09:47:14.867 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
-2025-07-16 09:47:14.877 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
-2025-07-16 09:47:14.879 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-07-16 09:47:14.879 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-16 09:47:14.935 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-07-16 09:47:14.936 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1160 ms
-2025-07-16 09:47:16.029 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5c371e13
-2025-07-16 09:47:16.169 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
-2025-07-16 09:47:16.187 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
-2025-07-16 09:47:16.197 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 2.986 seconds (process running for 3.689)
-2025-07-16 09:47:19.801 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-16 09:47:19.801 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-07-16 09:47:19.802 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-07-16 09:47:19.956 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-07-16 09:47:20.158 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e4dcf8b
-2025-07-16 09:47:20.160 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-07-16 09:52:26.530 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-16 09:52:27.091 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-07-16 09:52:27.241 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-07-16 09:52:27.247 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-07-16 10:43:30.562 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.15 with PID 3860 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
-2025-07-16 10:43:30.564 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - No active profile set, falling back to 1 default profile: "default"
-2025-07-16 10:43:31.411 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-16 10:43:31.415 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-16 10:43:31.445 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2025-07-16 10:43:32.116 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
-2025-07-16 10:43:32.129 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
-2025-07-16 10:43:32.130 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-07-16 10:43:32.131 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-16 10:43:32.217 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-07-16 10:43:32.218 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1601 ms
-2025-07-16 10:43:34.243 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5c371e13
-2025-07-16 10:43:34.419 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
-2025-07-16 10:43:34.438 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
-2025-07-16 10:43:34.448 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 4.597 seconds (process running for 6.09)
-2025-07-16 10:44:36.639 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-16 10:44:36.639 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-07-16 10:44:36.640 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-07-16 10:44:36.932 [http-nio-8088-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-07-16 10:44:37.184 [http-nio-8088-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@20fbc189
-2025-07-16 10:44:37.185 [http-nio-8088-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-07-16 11:20:22.782 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-16 11:20:22.983 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-07-16 11:20:23.135 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-07-16 11:20:23.141 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-07-16 11:20:26.865 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.15 with PID 25248 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
-2025-07-16 11:20:26.867 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - No active profile set, falling back to 1 default profile: "default"
-2025-07-16 11:20:27.564 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-16 11:20:27.568 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-16 11:20:27.608 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-2025-07-16 11:20:28.265 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
-2025-07-16 11:20:28.280 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
-2025-07-16 11:20:28.282 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-07-16 11:20:28.282 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-16 11:20:28.344 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-07-16 11:20:28.345 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1431 ms
-2025-07-16 11:20:29.448 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@467f77a5
-2025-07-16 11:20:29.570 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
-2025-07-16 11:20:29.585 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
-2025-07-16 11:20:29.594 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 3.344 seconds (process running for 4.252)
-2025-07-16 11:20:34.865 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-16 11:20:34.866 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-07-16 11:20:34.868 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2025-07-16 11:20:35.099 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-07-16 11:20:35.296 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c3a3db
-2025-07-16 11:20:35.298 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-07-16 11:21:21.703 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-16 11:21:21.932 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-07-16 11:21:22.063 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-07-16 11:21:22.070 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-07-16 11:21:27.121 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.15 with PID 10844 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
-2025-07-16 11:21:27.123 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - No active profile set, falling back to 1 default profile: "default"
-2025-07-16 11:21:27.783 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-16 11:21:27.786 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-16 11:21:27.813 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2025-07-16 11:21:28.392 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
-2025-07-16 11:21:28.406 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
-2025-07-16 11:21:28.407 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-07-16 11:21:28.408 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-16 11:21:28.482 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-07-16 11:21:28.483 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1314 ms
-2025-07-16 11:21:29.652 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5c371e13
-2025-07-16 11:21:29.774 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
-2025-07-16 11:21:29.790 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
-2025-07-16 11:21:29.799 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 3.305 seconds (process running for 4.152)
-2025-07-16 11:21:32.709 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-16 11:21:32.710 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-07-16 11:21:32.711 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-07-16 11:21:34.989 [http-nio-8088-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-07-16 11:21:35.181 [http-nio-8088-exec-4] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@300254d9
-2025-07-16 11:21:35.182 [http-nio-8088-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-07-16 11:34:24.753 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-16 11:34:25.039 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-07-16 11:34:25.184 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-07-16 11:34:25.193 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-07-16 11:34:33.366 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.15 with PID 33408 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
-2025-07-16 11:34:33.368 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - No active profile set, falling back to 1 default profile: "default"
-2025-07-16 11:34:34.007 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-16 11:34:34.010 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-16 11:34:34.038 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2025-07-16 11:34:34.621 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
-2025-07-16 11:34:34.636 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
-2025-07-16 11:34:34.639 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-07-16 11:34:34.640 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-16 11:34:34.702 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-07-16 11:34:34.703 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1290 ms
-2025-07-16 11:34:36.164 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@467f77a5
-2025-07-16 11:34:36.332 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
-2025-07-16 11:34:36.356 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
-2025-07-16 11:34:36.368 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 3.746 seconds (process running for 4.676)
-2025-07-16 11:34:44.763 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-16 11:34:44.763 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-07-16 11:34:44.765 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2025-07-16 11:34:44.957 [http-nio-8088-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-07-16 11:34:45.122 [http-nio-8088-exec-4] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@300254d9
-2025-07-16 11:34:45.123 [http-nio-8088-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-07-16 13:05:30.265 [http-nio-8088-exec-5] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:07:00.422 [http-nio-8088-exec-1] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:10:21.254 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-16 13:10:21.437 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-07-16 13:10:21.589 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-07-16 13:10:21.591 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-07-16 13:10:52.624 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.15 with PID 27840 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
-2025-07-16 13:10:52.626 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - No active profile set, falling back to 1 default profile: "default"
-2025-07-16 13:10:53.311 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-16 13:10:53.313 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-16 13:10:53.332 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-2025-07-16 13:10:53.877 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
-2025-07-16 13:10:53.889 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
-2025-07-16 13:10:53.891 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-07-16 13:10:53.891 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-16 13:10:53.964 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-07-16 13:10:53.965 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1294 ms
-2025-07-16 13:10:55.129 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@467f77a5
-2025-07-16 13:10:55.254 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
-2025-07-16 13:10:55.269 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
-2025-07-16 13:10:55.277 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 3.338 seconds (process running for 4.166)
-2025-07-16 13:11:02.645 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-16 13:11:02.645 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-07-16 13:11:02.646 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-07-16 13:11:02.803 [http-nio-8088-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-07-16 13:11:02.926 [http-nio-8088-exec-4] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b73a6db
-2025-07-16 13:11:02.928 [http-nio-8088-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-07-16 13:11:03.232 [http-nio-8088-exec-4] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:11:07.748 [http-nio-8088-exec-3] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:14:28.649 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-16 13:14:28.841 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-07-16 13:14:28.970 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-07-16 13:14:28.984 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-07-16 13:14:33.392 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.15 with PID 2180 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
-2025-07-16 13:14:33.393 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - No active profile set, falling back to 1 default profile: "default"
-2025-07-16 13:14:33.938 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2025-07-16 13:14:33.940 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-07-16 13:14:33.960 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-2025-07-16 13:14:34.426 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
-2025-07-16 13:14:34.443 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
-2025-07-16 13:14:34.445 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2025-07-16 13:14:34.446 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-16 13:14:34.508 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-07-16 13:14:34.508 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1079 ms
-2025-07-16 13:14:35.639 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5c371e13
-2025-07-16 13:14:35.760 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
-2025-07-16 13:14:35.775 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
-2025-07-16 13:14:35.784 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 2.967 seconds (process running for 3.647)
-2025-07-16 13:14:43.151 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-16 13:14:43.152 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-07-16 13:14:43.153 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-07-16 13:14:43.442 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-07-16 13:14:43.650 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e95d571
-2025-07-16 13:14:43.652 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-07-16 13:14:44.132 [http-nio-8088-exec-2] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:14:50.615 [http-nio-8088-exec-4] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:24:31.838 [http-nio-8088-exec-2] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565743963_1751164016836.jpeg
-2025-07-16 13:26:21.330 [http-nio-8088-exec-7] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:29:07.036 [http-nio-8088-exec-3] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:29:10.372 [http-nio-8088-exec-4] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:29:28.584 [http-nio-8088-exec-8] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:29:28.933 [http-nio-8088-exec-7] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:33:32.009 [http-nio-8088-exec-9] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:35:15.761 [http-nio-8088-exec-7] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:35:59.180 [http-nio-8088-exec-6] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565743963_1751164016836.jpeg
-2025-07-16 13:49:59.025 [http-nio-8088-exec-3] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:50:09.175 [http-nio-8088-exec-5] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565745471_1751164016836.jpeg
-2025-07-16 13:50:14.585 [http-nio-8088-exec-7] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565749076_1751164016836.jpeg
-2025-07-16 13:51:19.928 [http-nio-8088-exec-2] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:8ad6014a-7681-4493-81be-ac43d846bb5c 下载文件:1752565744708_1751164016836.jpeg
-2025-07-16 13:52:40.901 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-16 13:52:41.083 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-07-16 13:52:41.225 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-07-16 13:52:41.230 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-07-18 09:27:18.066 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Starting MyWallpaperApplication using Java 17.0.16 with PID 4620 (C:\Users\12793\Desktop\MyWallpaper\MyWallpaper\target\classes started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
+2025-07-18 09:27:18.071 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - The following 1 profile is active: "test"
+2025-07-18 09:27:18.811 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-18 09:27:18.814 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-18 09:27:18.840 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2025-07-18 09:27:19.430 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
+2025-07-18 09:27:19.441 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2025-07-18 09:27:19.443 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-18 09:27:19.443 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-18 09:27:19.494 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-18 09:27:19.494 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1375 ms
+2025-07-18 09:27:21.064 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3e792ce3
+2025-07-18 09:27:21.239 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2025-07-18 09:27:21.255 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
+2025-07-18 09:27:21.264 [main] INFO  com.baicha.mywallpaper.MyWallpaperApplication - Started MyWallpaperApplication in 3.833 seconds (process running for 6.09)
+2025-07-18 09:27:46.289 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-18 09:27:46.290 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-18 09:27:46.293 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-18 09:27:46.575 [http-nio-8088-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-18 09:27:46.948 [http-nio-8088-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1735c1b7
+2025-07-18 09:27:46.949 [http-nio-8088-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-07-18 09:30:09.227 [http-nio-8088-exec-10] INFO  c.baicha.mywallpaper.service.impl.FilesServiceImpl - 用户id:fb87a3cc-da2d-4aac-80fa-2783f456a2c5 上传文件:1752802208557_好看的头像.jpeg
+2025-07-18 09:32:58.042 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-18 09:32:58.181 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-18 09:32:58.306 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-07-18 09:32:58.313 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-07-18 09:33:19.520 [main] INFO  c.baicha.mywallpaper.MyWallpaperApplicationTests - Starting MyWallpaperApplicationTests using Java 17.0.16 with PID 7992 (started by 12793 in C:\Users\12793\Desktop\MyWallpaper\MyWallpaper)
+2025-07-18 09:33:19.521 [main] INFO  c.baicha.mywallpaper.MyWallpaperApplicationTests - The following 1 profile is active: "test"
+2025-07-18 09:33:20.402 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-18 09:33:20.405 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-18 09:33:20.436 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2025-07-18 09:33:23.248 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.web.context.support.GenericWebApplicationContext@31c2affc
+2025-07-18 09:33:23.479 [main] INFO  c.baicha.mywallpaper.MyWallpaperApplicationTests - Started MyWallpaperApplicationTests in 4.382 seconds (process running for 5.641)
+2025-07-18 09:33:24.593 [main] INFO  c.baicha.mywallpaper.MyWallpaperApplicationTests - 这是一个测试日志！
+2025-07-18 09:33:24.605 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.baicha.mywallpaper.RedisTest]: RedisTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-07-18 09:33:24.609 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.baicha.mywallpaper.MyWallpaperApplication for test class com.baicha.mywallpaper.RedisTest

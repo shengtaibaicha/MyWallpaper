@@ -10,6 +10,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baicha.mywallpaper.entity.Users;
 import com.baicha.mywallpaper.service.UsersService;
 import com.baicha.mywallpaper.mapper.UsersMapper;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -42,8 +43,8 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Respons register(String username, String password, String userEmail, String captchaCode, HttpSession session) {
-        Respons respons = checkCaptchaCode(captchaCode, session);
+    public Respons register(String username, String password, String userEmail, String captchaCode,  HttpServletRequest request) {
+        Respons respons = checkCaptchaCode(captchaCode, request);
         if (respons.getCode().equals(HttpStatus.BAD_REQUEST)) {
             return respons;
         }
@@ -78,8 +79,8 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Respons login(String usersname, String password, String captchaCode, HttpSession session ) {
-        Respons respons = checkCaptchaCode(captchaCode, session);
+    public Respons login(String usersname, String password, String captchaCode,  HttpServletRequest request) {
+        Respons respons = checkCaptchaCode(captchaCode, request);
         if (respons.getCode().equals(HttpStatus.BAD_REQUEST)) {
             return respons;
         }
@@ -94,6 +95,9 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
                 .eq(Users::getUserName, usersname);
         Users one = usersMapper.selectOne(eq);
         // 对比数据库的密码和前端接收到的密码是否相同
+        if (one == null) {
+            return Respons.error("用户名还未注册！");
+        }
         boolean b = myBcrypt.checkPassword(password, one.getUserPassword());
         if (b) {
             // 验证成功生成Token并返回
@@ -105,9 +109,10 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
         return Respons.error("用户名或密码错误！");
     }
 
-    public Respons checkCaptchaCode(String captchaCode, HttpSession session) {
+    public Respons checkCaptchaCode(String captchaCode, HttpServletRequest request) {
         // 验证验证码是否有效
-        Object redisKey = session.getAttribute("redisKey");
+        String redisKey = request.getHeader("redisKey");
+        log.debug(redisKey);
         if (redisKey == null){
             return Respons.error("未知错误，请重试！");
         }

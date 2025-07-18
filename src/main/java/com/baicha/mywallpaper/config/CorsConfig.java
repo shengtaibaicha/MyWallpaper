@@ -14,7 +14,11 @@ public class CorsConfig {
         // 1. 创建CORS配置对象
         CorsConfiguration config = new CorsConfiguration();
         // 允许前端域名（替换为你的前端实际地址，如http://localhost:5173）
+//        config.addAllowedOrigin("http://localhost:80");
         config.addAllowedOrigin("http://localhost:5173");
+        config.addAllowedOrigin("http://localhost:8089");
+        config.addAllowedOrigin("http://localhost:80");
+//        config.addAllowedOrigin("*");
         // 允许携带Cookie（如果需要）
         config.setAllowCredentials(true);
         // 允许所有请求方法（GET、POST、PUT等）

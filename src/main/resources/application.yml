@@ -1,17 +1,14 @@
 server:
   port: 8088
 spring:
+  profiles:
+    active: test
   application:
     name: MyWallpaper
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/mywallpaper?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
   servlet:
     multipart:
-      max-file-size: 10MB
-      max-request-size: 10MB
+      max-file-size: 25MB
+      max-request-size: 25MB
   data:
     redis:
       jedis:
@@ -29,12 +26,6 @@ spring:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-minio:
-  access-key: dntvkyou8CoSqIgcOuMI
-  secret-key: Rg5U71AxmkH20FxpLlWSgMzEj6lQp66OHKkCs1wR
-  url: http://127.0.0.1:9000
-  bucket-name: mywallpaper
 
 jwt:
   secret-key: xiaoyangxiaoyangxiaoyangxiaoyangxiaoyangxiaoyang # 至少32位长度

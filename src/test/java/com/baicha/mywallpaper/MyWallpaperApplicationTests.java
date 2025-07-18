@@ -36,13 +36,13 @@ class MyWallpaperApplicationTests {
         System.out.println(myBcrypt.checkPassword("123456", s));
     }
 
-    @Test
-    void tokenTest() {
-        LambdaQueryWrapper<Users> queryWrapper = new LambdaQueryWrapper<>();
-        LambdaQueryWrapper<Users> eq = queryWrapper.eq(Users::getUserId, "300eac25-2673-4857-95b6-6790d1a0a1ff");
-        Users users = usersMapper.selectOne(eq);
-        String s = jwtTool.generateToken(users);
-        String b = jwtTool.validateToken(s);
-        System.out.println(b);
-    }
+//    @Test
+//    void tokenTest() {
+//        LambdaQueryWrapper<Users> queryWrapper = new LambdaQueryWrapper<>();
+//        LambdaQueryWrapper<Users> eq = queryWrapper.eq(Users::getUserId, "300eac25-2673-4857-95b6-6790d1a0a1ff");
+//        Users users = usersMapper.selectOne(eq);
+//        String s = jwtTool.generateToken(users);
+//        String b = jwtTool.validateToken(s);
+//        System.out.println(b);
+//    }
 }

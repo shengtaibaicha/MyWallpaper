@@ -59,4 +59,9 @@ public class Files {
      *
      */
     private String fileTag;
+
+    /**
+     *
+     */
+    private String fileUrlse;
 }

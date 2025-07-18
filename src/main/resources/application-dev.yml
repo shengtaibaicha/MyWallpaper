@@ -1,0 +1,12 @@
+minio:
+  access-key: dntvkyou8CoSqIgcOuMI
+  secret-key: Rg5U71AxmkH20FxpLlWSgMzEj6lQp66OHKkCs1wR
+  url: http://127.0.0.1:9000
+  bucket-name: mywallpaper
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mywallpaper?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver

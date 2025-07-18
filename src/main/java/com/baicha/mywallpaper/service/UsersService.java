@@ -3,6 +3,7 @@ package com.baicha.mywallpaper.service;
 import com.baicha.mywallpaper.entity.Users;
 import com.baicha.mywallpaper.model.Respons;
 import com.baomidou.mybatisplus.extension.service.IService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 /**
@@ -16,12 +17,12 @@ public interface UsersService extends IService<Users> {
                      String password,
                      String userEmail,
                      String captchaCode,
-                     HttpSession session);
+                     HttpServletRequest request);
 
     Respons login(
             String username,
             String password,
             String captchaCode,
-            HttpSession session
+            HttpServletRequest request
     );
 }
