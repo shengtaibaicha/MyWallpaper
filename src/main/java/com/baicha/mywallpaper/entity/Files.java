@@ -17,8 +17,8 @@ public class Files {
     /**
      * 
      */
-    @TableId(type = IdType.AUTO)
-    private Integer fileId;
+    @TableId()
+    private String fileId;
 
     /**
      * 
@@ -54,11 +54,6 @@ public class Files {
      *
      */
     private String fileTitle;
-
-    /**
-     *
-     */
-    private String fileTag;
 
     /**
      *

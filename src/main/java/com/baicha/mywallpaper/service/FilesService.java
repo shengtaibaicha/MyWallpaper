@@ -15,11 +15,13 @@ import java.io.IOException;
 */
 public interface FilesService extends IService<Files> {
 
-    Respons upload(MultipartFile file) throws IOException;
+    Respons upload(MultipartFile file, Integer tagId) throws IOException;
 
     void download(String fileName, HttpServletResponse response);
 
     Respons delete(String fileName);
 
     Respons findPage(Integer page, Integer size);
+
+    Respons findByNamePage(Integer page, Integer size, String name);
 }

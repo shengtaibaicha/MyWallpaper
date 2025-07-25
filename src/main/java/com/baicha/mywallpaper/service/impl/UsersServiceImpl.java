@@ -3,15 +3,14 @@ package com.baicha.mywallpaper.service.impl;
 import cn.hutool.core.util.IdUtil;
 import com.baicha.mywallpaper.model.Respons;
 import com.baicha.mywallpaper.status.HttpStatus;
-import com.baicha.mywallpaper.tool.JwtTool;
-import com.baicha.mywallpaper.tool.MyBcrypt;
+import com.baicha.mywallpaper.tools.JwtTool;
+import com.baicha.mywallpaper.tools.MyBcrypt;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baicha.mywallpaper.entity.Users;
 import com.baicha.mywallpaper.service.UsersService;
 import com.baicha.mywallpaper.mapper.UsersMapper;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -40,6 +39,8 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
 
     @Autowired
     private MyBcrypt  myBcrypt;
+
+    String key;
 
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -72,6 +73,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
         users.setUserPassword(myBcrypt.hashPassword(password));
         int insert = usersMapper.insert(users);
         if (insert == 1) {
+            redisTemplate.delete(key);
             return Respons.ok();
         }
         return Respons.error("未知错误，请稍后重试！");
@@ -104,6 +106,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
             String token = jwtTool.generateToken(one);
             Map<String, String> map = new HashMap<>();
             map.put("token", token);
+            redisTemplate.delete(key);
             return Respons.ok(map);
         }
         return Respons.error("用户名或密码错误！");
@@ -111,19 +114,17 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
 
     public Respons checkCaptchaCode(String captchaCode, HttpServletRequest request) {
         // 验证验证码是否有效
-        String redisKey = request.getHeader("redisKey");
-        log.debug(redisKey);
-        if (redisKey == null){
-            return Respons.error("未知错误，请重试！");
+        key = request.getHeader("redisKey");
+        if (key == null){
+            return Respons.error("请先获取验证码！");
         }
-        String s = (String)redisTemplate.opsForValue().get(redisKey);
+        String s = (String)redisTemplate.opsForValue().get(key);
         if (s == null || s.isEmpty()) {
             return Respons.error("验证码已过期！");
         }
         if (!s.equals(captchaCode)) {
             return Respons.error("验证码错误！");
         }
-        redisTemplate.delete(redisKey);
         return Respons.ok();
     }
 }

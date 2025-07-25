@@ -1,8 +1,7 @@
-package com.baicha.mywallpaper.tool;
+package com.baicha.mywallpaper.tools;
 
 import com.baicha.mywallpaper.entity.Users;
 import io.jsonwebtoken.*;
-import io.jsonwebtoken.security.SignatureException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

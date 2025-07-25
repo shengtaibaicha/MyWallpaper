@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MinioConfig {
 
-//    @Value("${access-key}")
     @Value(value = "${minio.access-key}")
     private String accessKey;
 

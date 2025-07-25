@@ -1,9 +1,12 @@
 package com.baicha.mywallpaper.service.impl;
 
+import cn.hutool.core.util.IdUtil;
+import com.baicha.mywallpaper.entity.Tagandfile;
+import com.baicha.mywallpaper.mapper.TagandfileMapper;
 import com.baicha.mywallpaper.model.Respons;
 import com.baicha.mywallpaper.status.FileStatus;
-import com.baicha.mywallpaper.tool.MinioTool;
-import com.baicha.mywallpaper.tool.RequestContextHolder;
+import com.baicha.mywallpaper.tools.MinioTool;
+import com.baicha.mywallpaper.tools.RequestContextHolder;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -21,7 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -41,9 +43,12 @@ public class FilesServiceImpl extends ServiceImpl<FilesMapper, Files>
     @Autowired
     private MinioTool minioTool;
 
+    @Autowired
+    private TagandfileMapper tagandfileMapper;
+
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Respons upload(MultipartFile file) throws IOException {
+    public Respons upload(MultipartFile file, Integer tagId) throws IOException {
         String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
         String contentType = file.getContentType();
         // 保存压缩后的文件
@@ -64,6 +69,7 @@ public class FilesServiceImpl extends ServiceImpl<FilesMapper, Files>
         // 上传完成之后把数据存入mysql
         try {
             Files f = new Files();
+            f.setFileId(IdUtil.fastSimpleUUID());
             f.setFileUrl(s);
             f.setFileUrlse(s2);
             f.setUploadTime(new Date());
@@ -72,8 +78,15 @@ public class FilesServiceImpl extends ServiceImpl<FilesMapper, Files>
             f.setFileName(s1[4]);
             f.setNumber(0);
             String title = file.getOriginalFilename();
+            assert title != null;
             f.setFileTitle(title.split("[.]")[0]);
             filesMapper.insert(f);
+
+            // 把图片的标签信息和id存入第三张表中记录
+            Tagandfile tagandfile = new Tagandfile();
+            tagandfile.setTagId(tagId);
+            tagandfile.setFileId(f.getFileId());
+            tagandfileMapper.insert(tagandfile);
         } catch (Exception e) {
             log.error("文件上传失败" + e.getMessage());
             delete(s1[4]);
@@ -133,6 +146,15 @@ public class FilesServiceImpl extends ServiceImpl<FilesMapper, Files>
 
         Page<Files> filesPage = filesMapper.selectPage(files, eq);
 
+        return Respons.ok(filesPage);
+    }
+
+    @Override
+    public Respons findByNamePage(Integer page, Integer size, String name) {
+        LambdaQueryWrapper<Files> filesLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        LambdaQueryWrapper<Files> like = filesLambdaQueryWrapper.like(Files::getFileTitle, name);
+        LambdaQueryWrapper<Files> eq = like.eq(Files::getStatus, FileStatus.REVIEWED);
+        Page<Files> filesPage = filesMapper.selectPage(new Page<>(page, size), eq);
         return Respons.ok(filesPage);
     }
 }

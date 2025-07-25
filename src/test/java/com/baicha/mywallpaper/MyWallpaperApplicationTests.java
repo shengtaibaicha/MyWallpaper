@@ -1,12 +1,9 @@
 package com.baicha.mywallpaper;
 
-import com.baicha.mywallpaper.entity.Users;
 import com.baicha.mywallpaper.mapper.UsersMapper;
-import com.baicha.mywallpaper.tool.JwtTool;
-import com.baicha.mywallpaper.tool.MyBcrypt;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baicha.mywallpaper.tools.JwtTool;
+import com.baicha.mywallpaper.tools.MyBcrypt;
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

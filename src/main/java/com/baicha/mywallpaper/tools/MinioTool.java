@@ -1,7 +1,6 @@
-package com.baicha.mywallpaper.tool;
+package com.baicha.mywallpaper.tools;
 
 import io.minio.*;
-import io.minio.http.Method;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;

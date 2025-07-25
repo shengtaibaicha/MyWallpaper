@@ -1,8 +1,8 @@
 package com.baicha.mywallpaper.interceptor;
 
 import com.baicha.mywallpaper.model.Respons;
-import com.baicha.mywallpaper.tool.JwtTool;
-import com.baicha.mywallpaper.tool.RequestContextHolder;
+import com.baicha.mywallpaper.tools.JwtTool;
+import com.baicha.mywallpaper.tools.RequestContextHolder;
 import com.google.gson.Gson;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -27,12 +27,12 @@ public class ContextInterceptor implements HandlerInterceptor {
                              HttpServletResponse response,
                              Object handler) throws IOException {
         // 从请求头获取用户ID
-        String token = request.getHeader("token");
+        String token = request.getHeader("Authorization");
         Object userId = jwtTool.validateToken(token);
         if (userId.equals(false)) {
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
             response.setContentType("application/json;charset=utf-8");
-            Respons error = Respons.error("请先登录！");
+            Respons error = Respons.error("登录信息已过期！");
             response.getWriter().write(gson.toJson(error));
             return false;
         }
@@ -55,7 +55,7 @@ public class ContextInterceptor implements HandlerInterceptor {
                                 HttpServletResponse response,
                                 Object handler,
                                 Exception ex) {
-        // 请求完成后清除 ThreadLocal 数据
+        // 请求完成后清除 ThreadLocal 数据 防止内存泄漏
         RequestContextHolder.clear();
     }
 }

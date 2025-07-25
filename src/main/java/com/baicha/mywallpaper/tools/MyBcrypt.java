@@ -1,4 +1,4 @@
-package com.baicha.mywallpaper.tool;
+package com.baicha.mywallpaper.tools;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Component;

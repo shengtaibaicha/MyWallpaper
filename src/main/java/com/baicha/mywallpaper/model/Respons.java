@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Data
 public class Respons {
-    private Integer code;
-    private String message;
-    private Object data;
+    private Integer Code;
+    private String Message;
+    private Object Data;
 
     public static Respons ok() {
         Respons respons = new Respons();
@@ -29,10 +29,15 @@ public class Respons {
         return respons;
     }
 
-    public static Respons ok(String message, Object data) {
+    public static Respons ok(String message) {
         Respons respons = new Respons();
         respons.setCode(HttpStatus.SUCCESS);
         respons.setMessage(message);
+        return respons;
+    }
+
+    public static Respons ok(String message, Object data) {
+        Respons respons = ok(message);
         respons.setData(data);
         return respons;
     }
