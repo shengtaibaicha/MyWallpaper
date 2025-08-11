@@ -17,7 +17,7 @@ public class Tagandfile {
      * 
      */
     @TableId
-    private Integer id;
+    private String id;
 
     /**
      * 

@@ -10,25 +10,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-
 @Slf4j
 @RestController
-@RequestMapping("/wallpaper/kaptcha")
+@RequestMapping("/wallpaper/user")
 public class KaptchaController {
 
     @Autowired
     private Kaptcha kaptcha;
 
-    @GetMapping("/get")
+    @GetMapping("/captcha")
     @Operation(summary = "获取验证码图片")
     public Respons getKaptcha(HttpServletResponse response) {
         try {
-            kaptcha.createKaptcha(response);
+            String base64Image = kaptcha.createKaptcha(response);
+            return Respons.ok("获取验证码成功！",base64Image);
         } catch (Exception e) {
             log.error(e.getMessage());
             return Respons.error("获取验证码失败！");
         }
-        return Respons.ok();
     }
 }

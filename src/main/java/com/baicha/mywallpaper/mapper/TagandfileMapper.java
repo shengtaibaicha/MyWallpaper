@@ -19,8 +19,7 @@ import org.apache.ibatis.annotations.Select;
 public interface TagandfileMapper extends BaseMapper<Tagandfile> {
 
 
-    @Select("SELECT * FROM files WHERE file_id IN (SELECT file_id FROM tagAndFile WHERE tag_id = #{tagId}) AND st" +
-            "atus = '已审核'")
+    @Select("SELECT * FROM files WHERE file_id IN (SELECT file_id FROM tagAndFile WHERE tag_id = #{tagId}) AND status = '已审核'")
     IPage<Files> selectFilesPageByTag(Page<?> page, @Param("tagId") Integer tagId);
 }
 

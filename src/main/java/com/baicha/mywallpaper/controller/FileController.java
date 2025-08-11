@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
@@ -40,10 +39,10 @@ public class FileController {
         filesService.download(fileName, response);
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     @Operation(summary = "文件删除", description = "接收文件名进行删除")
-    public Respons deleteFile(@Parameter(name = "fileName", description = "文件名") @RequestParam String fileName) {
-        Respons result = filesService.delete(fileName);
+    public Respons deleteFile(@Parameter(name = "fileId", description = "文件名") @RequestParam String fileId) {
+        Respons result = filesService.delete(fileId);
         return result;
     }
 

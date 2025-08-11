@@ -15,12 +15,13 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
         // 允许前端域名（替换为你的前端实际地址，如http://localhost:5173）
 //        config.addAllowedOrigin("http://localhost:80");
-        config.addAllowedOrigin("http://localhost:5173");
-        config.addAllowedOrigin("http://localhost:8089");
-        config.addAllowedOrigin("http://localhost:80");
-//        config.addAllowedOrigin("*");
+//        config.addAllowedOrigin("http://localhost:5173");
+//        config.addAllowedOrigin("http://localhost:8089");
+//        config.addAllowedOrigin("http://localhost:80");
+        config.addAllowedOrigin("*");
+//         config.addAllowedOriginPattern("*"); // 不推荐在生产环境使用
         // 允许携带Cookie（如果需要）
-        config.setAllowCredentials(true);
+//        config.setAllowCredentials(true);
         // 允许所有请求方法（GET、POST、PUT等）
         config.addAllowedMethod("*");
         // 允许所有请求头

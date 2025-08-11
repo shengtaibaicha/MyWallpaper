@@ -1,9 +1,7 @@
 package com.baicha.mywallpaper.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.util.Date;
 import lombok.Data;
 
@@ -18,45 +16,51 @@ public class Files {
      * 
      */
     @TableId()
-    private String fileId;
+    private String FileId;
 
     /**
      * 
      */
-    private String fileUrl;
+    private String FileUrl;
 
     /**
      * 
      */
-    private Date uploadTime;
+    private Date UploadTime;
 
     /**
      * 
      */
-    private String status;
+    private String Status;
 
     /**
      * 
      */
-    private String userId;
+    private String UserId;
 
     /**
      *
      */
-    private String fileName;
+    private String FileName;
 
     /**
      *
      */
-    private Integer number;
+    private Integer Number;
 
     /**
      *
      */
-    private String fileTitle;
+    private String FileTitle;
 
     /**
      *
      */
-    private String fileUrlse;
+    private String FileUrlse;
+
+    /**
+     * 逻辑删除字段
+     */
+    @TableLogic
+    private Integer Deleted;
 }

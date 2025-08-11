@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/wallpaper/tag")
+@RequestMapping("/wallpaper/file/tag")
 public class TagController {
 
     @Autowired
@@ -23,10 +23,10 @@ public class TagController {
         return result;
     }
 
-    @GetMapping("/find/page")
+    @PostMapping("/find/page")
     @Operation(summary = "根据分类标签分页获取图片")
     public Respons findPage(@RequestBody TagDto tag) {
-        Respons result = tagsService.getByTagId(tag.getPage(), tag.getPage(), tag.getTagId());
+        Respons result = tagsService.getByTagId(tag.getPage(), tag.getSize(), tag.getTagId());
         return result;
     }
 }

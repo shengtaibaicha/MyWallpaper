@@ -23,7 +23,7 @@ public class Respons {
         return respons;
     }
 
-    public static Respons ok( Object data) {
+    public static Respons ok(Object data) {
         Respons respons = ok();
         respons.setData(data);
         return respons;

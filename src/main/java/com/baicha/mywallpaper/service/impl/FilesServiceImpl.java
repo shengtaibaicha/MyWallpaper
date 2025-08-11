@@ -77,6 +77,7 @@ public class FilesServiceImpl extends ServiceImpl<FilesMapper, Files>
             f.setUserId(String.valueOf(RequestContextHolder.get("userId")));
             f.setFileName(s1[4]);
             f.setNumber(0);
+            f.setDeleted(0);
             String title = file.getOriginalFilename();
             assert title != null;
             f.setFileTitle(title.split("[.]")[0]);
@@ -84,6 +85,7 @@ public class FilesServiceImpl extends ServiceImpl<FilesMapper, Files>
 
             // 把图片的标签信息和id存入第三张表中记录
             Tagandfile tagandfile = new Tagandfile();
+            tagandfile.setId(IdUtil.fastSimpleUUID());
             tagandfile.setTagId(tagId);
             tagandfile.setFileId(f.getFileId());
             tagandfileMapper.insert(tagandfile);
@@ -114,19 +116,20 @@ public class FilesServiceImpl extends ServiceImpl<FilesMapper, Files>
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Respons delete(String fileName) {
+    public Respons delete(String fileId) {
         try {
-            minioTool.deleteFile(fileName);
+            // 我们用逻辑删除，不去删除minio的文件了
+//            minioTool.deleteFile(fileId);
             // 先获取当前用户id和数据库的当前图片的用户id是否相同
             LambdaQueryWrapper<Files> qw = new LambdaQueryWrapper<>();
-            LambdaQueryWrapper<Files> eq = qw.eq(Files::getFileName, fileName)
+            LambdaQueryWrapper<Files> eq = qw.eq(Files::getFileId, fileId)
                     .eq(Files::getUserId, RequestContextHolder.get("userId"));
             Files files = filesMapper.selectOne(eq);
             if (files == null) {
                 return Respons.error("只能删除自己上传的图片！");
             }
             filesMapper.deleteById(files);
-            log.info("用户id:" + RequestContextHolder.get("userId") + " 删除文件:" + fileName);
+            log.info("用户id:" + RequestContextHolder.get("userId") + " 删除文件:" + fileId);
             return Respons.ok();
         }
         catch (Exception e) {
